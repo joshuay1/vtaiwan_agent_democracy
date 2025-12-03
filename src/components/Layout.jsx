@@ -12,7 +12,7 @@ export default function Layout() {
     <div style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <header className="app-header">
         <div className="app-title" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/vtaiwan-logo.svg" alt="vTaiwan" style={{ height: '2rem', marginRight: '0.8rem' }} />
+          <img src={`${import.meta.env.BASE_URL}vtaiwan-logo.svg`} alt="vTaiwan" style={{ height: '2rem', marginRight: '0.8rem' }} />
           _Agent_Democracy_模擬市民大會
         </div>
         <nav className="tabbar" aria-label="Primary">

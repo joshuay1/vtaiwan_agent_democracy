@@ -5,7 +5,7 @@ export default function ReferendumPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('/referendum.csv')
+    fetch(`${import.meta.env.BASE_URL}referendum.csv`)
       .then(res => res.text())
       .then(text => {
         const lines = text.trim().split('\n');

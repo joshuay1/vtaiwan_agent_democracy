@@ -23,7 +23,7 @@ function App({ forcedMode }) {
   }, [apiKey]);
 
   useEffect(() => {
-    fetch('/personas.json')
+    fetch(`${import.meta.env.BASE_URL}personas.json`)
       .then(res => res.json())
       .then(setAgents);
   }, []);
