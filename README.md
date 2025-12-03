@@ -15,8 +15,6 @@ This experiment asks: Can AI agents, modeled after participants' values and stan
 
 However, this is not an endorsement of replacing human agency with automation. Instead, it is a critical examination of such a future. Democracy is a practice, not just an outcome.
 
-As Audrey Tang said in the [Berlin Freedom Conference](https://sayit.archive.tw/2025-11-10-berlin-freedom-conference-the-role-of-a): *"Because if we delegate democracy and policy to chatbots for debate, that would be like sending our robots to the gym to lift the weights for us. I’m sure it’s very impressive. They can lift a lot. But our civic muscle will atrophy."*
-
 **中文**
 這個計畫是 vTaiwan 社群在 2025 年 9 月至 10 月進行的一項實驗性探索。這是一個推測性的嘗試，並不是要用來做重大決策的正式審議。
 
@@ -25,8 +23,6 @@ As Audrey Tang said in the [Berlin Freedom Conference](https://sayit.archive.tw/
 這個實驗想問的是：模仿參與者價值觀與立場的 AI 代理人，能不能彌補這個落差？透過讓使用者建立像「模擬市民」般的代理人，在虛擬空間中辯論、協作，我們試著模擬那些通常缺席於談判桌上的聲音。
 
 然而，這並不是要支持用自動化來取代人類的能動性，而是對這種未來的一種批判性檢視。民主是一種實踐，而不僅僅是結果。
-
-正如唐鳳在[柏林自由論壇](https://sayit.archive.tw/2025-11-10-berlin-freedom-conference-the-role-of-a)所言：*「因為如果我們把民主和政策辯論授權給聊天機器人，那就好比派我們的機器人去健身房幫我們舉重。我相信那會非常令人印象深刻，它們可以舉起很重的重量。但我們的公民肌肉將會萎縮。」*
 
 ### Participants & Consent / 參與者與授權
 
