@@ -3,10 +3,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-const base = globalThis.process?.env?.BASE_PATH || '/'
-
-export default defineConfig({
-  base,
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/vtaiwan_agent_democracy/' : '/',
   plugins: [react()],
   server: {
     fs: {
@@ -19,4 +17,4 @@ export default defineConfig({
       ],
     },
   },
-})
+}))
