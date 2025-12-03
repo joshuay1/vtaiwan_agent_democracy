@@ -1,0 +1,162 @@
+:root {
+    /* Cyber Console UI Theme Variables */
+    --primary-bg: #0a0a0a;
+    /* Darker background */
+    --secondary-bg: #111111;
+    --accent-color: #E07A5F;
+    /* Earthy Orange */
+    --glow-color: rgba(224, 122, 95, 0.5);
+    /* Orange Glow */
+    --text-color: #E0E0E0;
+    --text-dim: #888888;
+    --border-color: #333333;
+    --font-mono: 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+
+    font-family: var(--font-mono);
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark;
+    color: var(--text-color);
+    background-color: var(--primary-bg);
+
+    /* Cyber Grid Background */
+    background-image:
+        linear-gradient(rgba(224, 122, 95, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(224, 122, 95, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: var(--accent-color);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff9e80;
+}
+
+body {
+    margin: 0;
+    display: block;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button {
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tech/Cut Corner Effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(45deg, transparent 50%, var(--border-color) 50%);
+}
+
+button:hover:not(:disabled) {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px var(--glow-color);
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+input,
+select,
+textarea {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    border-radius: 0;
+    transition: all 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--glow-color);
+}
+
+.sidebar input[type="password"] {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-family: var(--font-mono);
+    transition: all 0.2s;
+}
+
+.sidebar input[type="password"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--glow-color);
+}

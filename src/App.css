@@ -1,0 +1,330 @@
+/* Layout */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(10, 10, 10, 0.9);
+    /* Semi-transparent */
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 0 rgba(224, 122, 95, 0.1);
+}
+
+.app-title {
+    font-size: 1.5rem;
+    /* Increased */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.tabbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.tab {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    /* Increased */
+    transition: all 0.2s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.tab:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+.tab.active {
+    color: var(--accent-color);
+    font-weight: 700;
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.tab-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Main Flex Layout (35/65 Split) */
+.main-flex-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 35%;
+    min-width: 350px;
+    border-right: 1px solid var(--border-color);
+    /* padding: 2rem;  Removed padding from container */
+    overflow: hidden;
+    /* Changed from overflow-y: auto */
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; Moved to scroll area */
+    background-color: rgba(10, 10, 10, 0.8);
+    position: relative;
+}
+
+.sidebar-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.persona-card-container {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    max-height: 35vh;
+    /* Limit height to 35% of viewport */
+    overflow-y: auto;
+    /* Allow scrolling within the card */
+}
+
+/* Decorative "System" line for sidebar */
+.sidebar::before {
+    content: '/// SYSTEM_READY';
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.7rem;
+    /* Increased */
+    color: var(--border-color);
+    letter-spacing: 2px;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(17, 17, 17, 0.6);
+    position: relative;
+}
+
+/* Sidebar Components */
+.agent-label {
+    display: block;
+    font-size: 1rem;
+    /* Increased */
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 8px;
+}
+
+.sidebar-block {
+    margin-bottom: 1.5rem;
+}
+
+.persona-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    position: relative;
+    /* Tech corners */
+    clip-path: polygon(0 0,
+            100% 0,
+            100% calc(100% - 15px),
+            calc(100% - 15px) 100%,
+            0 100%);
+    border-right: 2px solid var(--border-color);
+    /* Fallback visual */
+}
+
+.persona-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, transparent 50%, var(--accent-color) 50%);
+    opacity: 0.5;
+}
+
+.persona-card h3 {
+    font-size: 1.1rem;
+    /* Decreased */
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+.persona-meta {
+    font-size: 0.9rem;
+    /* Decreased */
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Chat Area */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chat-window {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chat-input {
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 1.5rem;
+    background-color: var(--primary-bg);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.chat-input input {
+    flex: 1;
+    background-color: #000;
+    font-size: 1.2rem;
+    /* Increased */
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Messages */
+.user-msg,
+.agent-msg,
+.moderator-msg {
+    max-width: 80%;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-msg {
+    align-self: flex-end;
+    text-align: left;
+    background-color: rgba(224, 122, 95, 0.25);
+    border-bottom-right-radius: 4px;
+}
+
+.agent-msg {
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-bottom-left-radius: 4px;
+}
+
+.moderator-msg {
+    align-self: center;
+    width: 90%;
+    max-width: 90%;
+    border: 1px dashed var(--accent-color);
+    padding: 1.5rem;
+    background-color: rgba(224, 122, 95, 0.1);
+    margin: 1.5rem 0;
+    box-shadow: 0 0 15px rgba(224, 122, 95, 0.1);
+    border-radius: 16px;
+}
+
+.nickname-label {
+    display: block;
+    font-size: 0.9rem;
+    /* Increased */
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.msg-content {
+    font-size: 1.2rem;
+    /* Increased */
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* Past Debates List & Agent Selection List */
+.conversation-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.conversation-item {
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    width: 100%;
+    transition: all 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.conversation-item:hover {
+    background-color: rgba(224, 122, 95, 0.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--glow-color) inset;
+}
+
+.conversation-item.selected {
+    border-color: var(--accent-color);
+    background-color: rgba(224, 122, 95, 0.1);
+    box-shadow: 0 0 15px var(--glow-color) inset;
+}
+
+.conversation-item.selected::before {
+    content: '>';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Button overrides for larger text */
+button {
+    font-size: 1.1rem;
+    /* Increased */
+    padding: 0.8em 1.5em;
+}
